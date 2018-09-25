@@ -21,14 +21,14 @@ message AplaGetAddress {
  * @end
  */
 message AplaAddress {
-    required bytes address = 1; 
+    required string address = 1; 
 }
 
 
 /**
  * Request: Ask device for Apla address corresponding to address_n path
  * @start
- * @next AplaAddress
+ * @next AplaPublicKey
  * @next Failure
  */
 message AplaGetPublicKey {
@@ -42,14 +42,14 @@ message AplaGetPublicKey {
  * @end
  */
 message AplaPublicKey {
-    required bytes public_key = 1;     
+    required string public_key = 1;     
 }
 
 
 /**
  * Request: Ask device for Apla address corresponding to address_n path
  * @start
- * @next AplaAddress
+ * @next AplaPrivateKey
  * @next Failure
  */
  message AplaGetPrivateKey {
@@ -62,7 +62,7 @@ message AplaPublicKey {
  * @end
  */
 message AplaPrivateKey {
-    required bytes private_key = 1;     
+    required string private_key = 1;     
 }
 
 
