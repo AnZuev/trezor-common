@@ -229,4 +229,14 @@ enum MessageType {
     MessageType_MoneroWatchKey = 543 [(wire_out) = true];
     MessageType_DebugMoneroDiagRequest = 546 [(wire_in) = true];
     MessageType_DebugMoneroDiagAck = 547 [(wire_out) = true];
+
+    // Apla
+    MessageType_AplaGetAddress = 548 [(wire_in) = true];
+    MessageType_AplaAddress = 549 [(wire_out) = true];
+    MessageType_AplaGetPublicKey = 550 [(wire_in) = true];
+    MessageType_AplaPublicKey = 551 [(wire_out) = true];
+    MessageType_AplaGetPrivateKey = 552 [(wire_in) = true];
+    MessageType_AplaPrivateKey = 553 [(wire_out) = true];
+    MessageType_AplaSignTransaction = 554 [(wire_in) = true];
+    MessageType_AplaSignedTransaction = 555 [(wire_out) = true];
 }
