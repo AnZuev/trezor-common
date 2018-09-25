@@ -66,5 +66,23 @@ message AplaPrivateKey {
 }
 
 
+/**
+ * Request: Ask device to sign the transaction
+ * @start
+ * @next AplaSignedTransaction
+ * @next Failure
+ */
+ message AplaSignTransaction {
+    repeated uint32 address_n = 1;  // BIP-32 path to derive the key from master node
+    optional bool show_display = 2; 
+    repeated bytes transaction = 3;    
+}
 
+/**
+ * Response: Contains an Apla signed transaction
+ * @end
+ */
+message AplaSignedTransaction {
+    required bytes signed_transaction = 1;     
+}
 
