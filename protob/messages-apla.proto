@@ -21,7 +21,7 @@ message AplaGetAddress {
  * @end
  */
 message AplaAddress {
-    required string address = 1; 
+    required bytes address = 1; 
 }
 
 
