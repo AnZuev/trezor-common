@@ -8,20 +8,20 @@ option java_outer_classname = "TrezorMessageApla";
 /**
  * Request: Ask device for Apla address corresponding to address_n path
  * @start
- * @next AplaAddress
+ * @next AplaWallet
  * @next Failure
  */
-message AplaGetAddress {
+message AplaGetWallet {
     repeated uint32 address_n = 1;  // BIP-32 path to derive the key from master node
     optional bool show_display = 2; // optionally show on display before sending the result
 }
 
 /**
- * Response: Contains an Apla address derived from device private seed
+ * Response: Contains an Apla wallet derived from device private seed
  * @end
  */
-message AplaAddress {
-    required bytes address = 1; 
+message AplaWallet {
+    required string address = 1; 
 }
 
 
@@ -45,44 +45,23 @@ message AplaPublicKey {
     required string public_key = 1;     
 }
 
-
 /**
- * Request: Ask device for Apla address corresponding to address_n path
+ * Request: Ask device to sign the message
  * @start
- * @next AplaPrivateKey
+ * @next AplaSignedMessage
  * @next Failure
  */
- message AplaGetPrivateKey {
+ message AplaSignMessage{
     repeated uint32 address_n = 1;  // BIP-32 path to derive the key from master node
-    optional bool show_display = 2;     
+    repeated bytes message = 3;    
 }
 
 /**
- * Response: Contains an Apla private key
+ * Response: Contains an Apla signed message
  * @end
  */
-message AplaPrivateKey {
-    required string private_key = 1;     
-}
-
-
-/**
- * Request: Ask device to sign the transaction
- * @start
- * @next AplaSignedTransaction
- * @next Failure
- */
- message AplaSignTransaction {
-    repeated uint32 address_n = 1;  // BIP-32 path to derive the key from master node
-    optional bool show_display = 2; 
-    repeated bytes transaction = 3;    
-}
-
-/**
- * Response: Contains an Apla signed transaction
- * @end
- */
-message AplaSignedTransaction {
-    required bytes signed_transaction = 1;     
+message AplaSignedMessage{
+    optional bytes message = 1;
+    optional bytes public_key = 2;     
 }
 
