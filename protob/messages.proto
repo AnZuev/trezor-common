@@ -236,5 +236,5 @@ enum MessageType {
     MessageType_AplaGetPublicKey = 550 [(wire_in) = true];
     MessageType_AplaPublicKey = 551 [(wire_out) = true];
     MessageType_AplaSignMessage = 552 [(wire_in) = true];
-    MessageType_AplaSignedMessage = 553 [(wire_out) = true];
+    MessageType_AplaMessageSignature = 553 [(wire_out) = true];
 }

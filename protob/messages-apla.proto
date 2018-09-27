@@ -60,7 +60,7 @@ message AplaPublicKey {
  * Response: Contains an Apla signed message
  * @end
  */
-message AplaSignedMessage{
+message AplaMessageSignature{
     optional bytes message = 1;
     optional bytes public_key = 2;     
 }
