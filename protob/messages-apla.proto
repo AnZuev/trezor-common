@@ -53,7 +53,7 @@ message AplaPublicKey {
  */
  message AplaSignMessage{
     repeated uint32 address_n = 1;  // BIP-32 path to derive the key from master node
-    repeated bytes message = 2;    
+    optional bytes message = 2;    
 }
 
 /**
