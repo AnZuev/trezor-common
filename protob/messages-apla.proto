@@ -1,4 +1,4 @@
-syntax = "proto3";
+syntax = "proto2";
 package hw.trezor.messages.apla;
 
 // Sugar for easier handling in Java
