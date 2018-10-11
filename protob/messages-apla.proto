@@ -81,10 +81,10 @@ message AplaMessageSignature{
     optional string PayOver = 3;
     map<string, any> Params = 4;
     
-    /**
-    * AplaTransactionHeader represents header for transaction
-    *
-    / 
+    
+     AplaTransactionHeader represents header for transaction
+    
+     
     message AplaTransactionHeader{
         required int64 ID = 1;           
         required int64 Time = 2;
