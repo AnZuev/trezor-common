@@ -1,4 +1,4 @@
-syntax = "proto2";
+syntax = "proto3";
 package hw.trezor.messages.apla;
 
 // Sugar for easier handling in Java
@@ -53,7 +53,8 @@ message AplaPublicKey {
  */
  message AplaSignMessage{
     repeated uint32 address_n = 1;  // BIP-32 path to derive the key from master node
-    optional bytes message = 2;    
+    optional bytes message = 2;
+    optional string ask_for_confirmation = 3;    
 }
 
 /**
@@ -64,4 +65,32 @@ message AplaMessageSignature{
     optional bytes signature = 1;
     optional bytes public_key = 2;
 }
+
+
+/**
+ * Request: Ask device to sign the transaction
+ * @start
+ * @next AplaSignedTransaction
+ * @next Failure
+ */
+ message AplaSignTransaction{
+    required AplaTransactionHeader Header = 1;
+    optional string MaxSum = 2;
+    optional string PayOver = 3;
+    map<string, any> Params = 4;
+    
+    /**
+    * AplaTransactionHeader represents header for transaction
+    *
+    */ 
+    message AplaTransactionHeader{
+        required int64 ID = 1;           
+        required int64 Time = 2;
+        required int64 EcosystemID= 3;   
+        required int64 NetworkID = 4;   
+        required bytes PublicKey = 5;   
+        required int64 KeyID = 6;   
+    }
+ }
+
 
