@@ -73,6 +73,8 @@ message AplaMessageSignature{
  * @next AplaSignedTransaction
  * @next Failure
  */
+
+ /*
  message AplaSignTransaction{
     required AplaTransactionHeader Header = 1;
     optional string MaxSum = 2;
@@ -82,7 +84,7 @@ message AplaMessageSignature{
     /**
     * AplaTransactionHeader represents header for transaction
     *
-    */ 
+    / 
     message AplaTransactionHeader{
         required int64 ID = 1;           
         required int64 Time = 2;
@@ -92,5 +94,5 @@ message AplaMessageSignature{
         required int64 KeyID = 6;   
     }
  }
-
+ */
 
